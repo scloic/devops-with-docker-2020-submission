@@ -1,0 +1,25 @@
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_11$ touch logs.txt 
+
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_11$ cat logs.txt 
+
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_11$ docker run -p 8000:8000 -v $(pwd)/logs.txt:./logs.txt -d backend-example-docker
+
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_11$ docker logs -f 80576cd84110c53806bd3f7f7bbb3c2e107958f2b493e9716671474899debdbe
+> backend-example-docker@1.0.0 start /backend-example-docker
+> node index.js
+ENV values set as follows: { DB:
+   { username: undefined,
+     password: undefined,
+     database: undefined,
+     host: 'localhost' },
+  PORT: 8000,
+  FRONT_URL: '',
+  REDIS: undefined,
+  REDIS_PORT: 6379 }
+[Exercise 2.6+] DB_USERNAME and/or DB_PASSWORD are not defined, skipping db connection
+[Exercise 2.5+] REDIS is not defined, skipping redis connection
+Started on port 8000
+::ffff:10.0.2.2 - GET / HTTP/1.1 304 - - 34.111 ms
+
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_11$ cat logs.txt 
+11/11/2020, 9:42:25 PM: Connection received in root

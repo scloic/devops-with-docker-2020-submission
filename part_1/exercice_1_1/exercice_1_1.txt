@@ -1,0 +1,5 @@
+smith@debian:~/DevOps_With_Docker/Part_1$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+7360e378fc3f        nginx               "/docker-entrypoint.…"   20 seconds ago      Exited (0) 4 seconds ago                       cool_feistel
+4151cdde5e89        nginx               "/docker-entrypoint.…"   24 seconds ago      Exited (0) 4 seconds ago                       funny_boyd
+5b3d72ac3876        nginx               "/docker-entrypoint.…"   28 seconds ago      Up 25 seconds              80/tcp              relaxed_davinci

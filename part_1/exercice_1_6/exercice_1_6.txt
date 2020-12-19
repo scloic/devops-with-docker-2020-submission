@@ -1,0 +1,20 @@
+smith@debian:~/devOps_With_Docker/Part_1/exercice_1_6$ docker build -t docker-clock  .
+
+smith@debian:~/devOps_With_Docker/Part_1/exercice_1_6$ docker run docker-clock -h
+
+-h,         --help            to show this message
+-a [age],   --adult [age]     to check if you're older than 18
+-c [time],  --clock [time]    to start a clock
+-t [size],  --triangle [size] to draw a triangle, takes second argument as the size
+    
+smith@debian:~/devOps_With_Docker/Part_1/exercice_1_6$ docker run -d docker-clock
+fe4dcb322764f2cd3a4fc647ee2280ef58f11017f429ece134ee4492e6d7e969
+
+smith@debian:~/devOps_With_Docker/Part_1/exercice_1_6$ docker attach fe4 --sig-proxy=false
+12
+13
+14
+15
+16
+17
+18

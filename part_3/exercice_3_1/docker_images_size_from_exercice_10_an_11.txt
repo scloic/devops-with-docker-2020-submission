@@ -1,0 +1,4 @@
+smith@debian:~/devopswithdocker/part_2/exercice_2_10_reproduction$ docker images | head -n 3
+REPOSITORY                                                              TAG                 IMAGE ID            CREATED              SIZE
+backend-example-docker                                                  latest              56dd16d9b500        About a minute ago   333MB
+frontend-example-docker                                                 latest              af1a87d6ff0a        7 minutes ago        527MB

@@ -1,0 +1,2 @@
+Differences with 2.8 in docker-compose.yml:
+Port is not fixed in the properties API_URL (frontend) and FRONT_URL (backend)

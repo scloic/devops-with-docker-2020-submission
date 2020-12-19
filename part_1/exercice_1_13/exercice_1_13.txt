@@ -1,0 +1,43 @@
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_13$ docker build -t spring-example-project .
+Sending build context to Docker daemon  152.1kB
+Step 1/5 : FROM openjdk:8u272-jdk
+ ---> 3edb5f36304e
+Step 2/5 : COPY spring-example-project spring-example-project
+ ---> Using cache
+ ---> 3b27232b8ed9
+Step 3/5 : WORKDIR spring-example-project
+ ---> Using cache
+ ---> ef14eccc3428
+Step 4/5 : RUN ./mvnw package
+ ---> Using cache
+ ---> c2bc295afa93
+Step 5/5 : CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
+ ---> Using cache
+ ---> 043b55c0d3a9
+Successfully built 043b55c0d3a9
+Successfully tagged spring-example-project:latest
+
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_13$ docker run -p 8080:8080 spring-example-project
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2020-11-11 22:17:55.531  INFO 1 --- [           main] c.d.dockerexample.DemoApplication        : Starting DemoApplication v1.1.3 on a2e20f283c35 with PID 1 (/spring-example-project/target/docker-example-1.1.3.jar started by root in /spring-example-project)
+2020-11-11 22:17:55.544  INFO 1 --- [           main] c.d.dockerexample.DemoApplication        : No active profile set, falling back to default profiles: default
+2020-11-11 22:18:07.367  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-11-11 22:18:07.602  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-11 22:18:07.602  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-11-11 22:18:07.674  INFO 1 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2020-11-11 22:18:08.125  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-11 22:18:08.126  INFO 1 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 12275 ms
+2020-11-11 22:18:09.250  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-11 22:18:09.889  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-11-11 22:18:11.264  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-11-11 22:18:11.270  INFO 1 --- [           main] c.d.dockerexample.DemoApplication        : Started DemoApplication in 18.736 seconds (JVM running for 20.795)
+2020-11-11 22:18:47.373  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-11 22:18:47.374  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-11 22:18:47.552  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 178 ms

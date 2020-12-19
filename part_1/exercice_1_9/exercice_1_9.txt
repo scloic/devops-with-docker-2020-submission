@@ -1,0 +1,5 @@
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_9$ docker run -d -p 1080:80 devopsdockeruh/ports_exercise
+33d782b8db090af13364bd8ae828b4488b8e07c7e3d1c49dce6c848a383b083c
+
+smith@debian:~/devOps_With_Docker/part_1/exercice_1_9$ curl localhost:1080
+Ports configured correctly!!

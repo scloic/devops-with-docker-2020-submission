@@ -1,0 +1,29 @@
+smith@debian:~/devopswithdocker/part_3/exercice_3_5$ docker images | grep docker_3_1
+backend-example-docker_3_1                                              latest              a115a5f57a1d        3 weeks ago         299MB
+frontend-example-docker_3_1                                             latest              3f4d07fabca0        3 weeks ago         493MB
+
+smith@debian:~/devopswithdocker/part_3/exercice_3_5$ docker history backend-example-docker_3_1
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+a115a5f57a1d        3 weeks ago         /bin/sh -c #(nop)  CMD ["npm" "start"]          0B                  
+86d5f6c2f457        3 weeks ago         /bin/sh -c #(nop)  EXPOSE 8000                  0B                  
+8770afe83841        3 weeks ago         /bin/sh -c apt-get update && apt-get install…   168MB               
+08712dd39c75        4 weeks ago         /bin/sh -c #(nop) WORKDIR /backend-example-d…   0B                  
+d4123a090ee3        4 weeks ago         /bin/sh -c #(nop) COPY dir:5851d3e579d7ce1e1…   227kB               
+dfeff22e96ae        8 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           8 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           8 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           8 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           8 weeks ago         /bin/sh -c #(nop) ADD file:c1f3147c7b6710af5…   131MB               
+
+smith@debian:~/devopswithdocker/part_3/exercice_3_5$ docker history frontend-example-docker_3_1
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+3f4d07fabca0        3 weeks ago         /bin/sh -c #(nop)  CMD ["npm" "start"]          0B                  
+6edcae3f8c1b        3 weeks ago         /bin/sh -c #(nop)  EXPOSE 5000                  0B                  
+918c99526aa7        3 weeks ago         /bin/sh -c apt-get update && apt-get install…   362MB               
+73c0136382f2        4 weeks ago         /bin/sh -c #(nop) WORKDIR /frontend-example-…   0B                  
+9312f0b33cb7        4 weeks ago         /bin/sh -c #(nop) COPY dir:c4b8d445378b2aad5…   918kB               
+dfeff22e96ae        8 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           8 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           8 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           8 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           8 weeks ago         /bin/sh -c #(nop) ADD file:c1f3147c7b6710af5…   131MB    

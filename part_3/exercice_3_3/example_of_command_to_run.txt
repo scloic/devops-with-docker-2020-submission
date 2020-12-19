@@ -1,0 +1,1 @@
+docker run -v /var/run/docker.sock:/var/run/docker.sock exercice_3_3 https://github.com/heroku/alpinehelloworld.git lschils/alpinehelloworld

@@ -1,0 +1,11 @@
+smith@debian:~/DevOps_With_Docker/Part_1$ docker run -itd --name ex_1_4 devopsdockeruh/exec_bash_exercise
+5e89c2d8a4af0e7e9bb9d2ac24038143b3b45f802e9e56c263044df46db236d0
+
+smith@debian:~/DevOps_With_Docker/Part_1$ docker exec -it ex_1_4 bash
+root@5e89c2d8a4af:/usr/app# ls
+Dockerfile  README.md  index.js  logs.txt
+root@5e89c2d8a4af:/usr/app# tail -f logs.txt 
+Tue, 10 Nov 2020 18:00:57 GMT
+Secret message is:
+"Docker is easy"
+Tue, 10 Nov 2020 18:01:03 GMT

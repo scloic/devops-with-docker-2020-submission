@@ -1,0 +1,5 @@
+smith@debian:~/DevOps_With_Docker/Part_1$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+smith@debian:~/DevOps_With_Docker/Part_1$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
